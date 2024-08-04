@@ -4,17 +4,23 @@ class Solution {
     public int solution(int[] citations) {
         Arrays.sort(citations);
 
-        int answer = 0;
+        int centerIndex = citations.length / 2;
+        while (0 <= centerIndex && centerIndex < citations.length) {
+            int center = citations[centerIndex];
+            int afterCnt = citations.length - (centerIndex + 1);
+            int beforeCnt = centerIndex;
 
-        for (int i = 0; i < citations.length; i++) {
-            int h = citations.length - i;
-
-            if (citations[i] >= h) {
-                answer = h;
-                break;
+            if (center <= afterCnt) {
+                if (center >= beforeCnt) {
+                    return center;
+                } else {
+                    centerIndex++;
+                }
+            } else {
+                centerIndex--;
             }
         }
 
-        return answer;
+        return 0;
     }
 }
