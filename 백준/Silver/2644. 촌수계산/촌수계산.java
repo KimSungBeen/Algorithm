@@ -52,18 +52,8 @@ class Solution {
 
         Queue<Integer> q = new LinkedList<>();
 
-        // targetPeople1 과 인접한 번호 추가
-        for (int i = 0; i < relations.length; i++) {
-            if (relations[i][0] == targetPeople1) {
-                q.add(relations[i][1]);
-                visited[i] = true;
-                cnt[relations[i][1]] = 1;
-            } else if (relations[i][1] == targetPeople1) {
-                q.add(relations[i][0]);
-                visited[i] = true;
-                cnt[relations[i][0]] = 1;
-            }
-        }
+        q.add(targetPeople1);
+        cnt[targetPeople1] = 0;
 
         while (!q.isEmpty()) {
             int num = q.poll();
