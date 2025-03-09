@@ -3,6 +3,26 @@ import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
+/*
+테스트 값들
+4 12
+802
+743
+457
+539
+
+2 10
+200
+400
+
+3 100
+555
+324
+178
+
+1 1
+2147483647
+*/
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
 
